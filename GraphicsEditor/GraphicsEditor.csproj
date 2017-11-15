@@ -42,7 +42,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Commands\CircleCommand.cs" />
+    <Compile Include="Commands\LineCommand.cs" />
+    <Compile Include="Commands\PointCommand.cs" />
+    <Compile Include="Commands\EllipseCommand.cs" />
+    <Compile Include="Shapes\Circle.cs" />
+    <Compile Include="Shapes\Ellipse.cs" />
+    <Compile Include="Shapes\Line.cs" />
     <Compile Include="Picture.cs" />
+    <Compile Include="Shapes\Point.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -59,6 +67,7 @@
       <Name>DrawablesUI</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
