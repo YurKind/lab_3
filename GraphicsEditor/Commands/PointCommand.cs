@@ -1,4 +1,5 @@
 ﻿using ConsoleUI;
+using DrawablesUI;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -48,7 +49,31 @@ namespace GraphicsEditor.Commands
 
         public void Execute(params string[] parameters)
         {
-            
+            float[] values = new float[2];
+            try
+            {
+                values = CommandService.GetCommandValues(parameters, 2);
+            }
+            catch (OverflowException e)
+            {
+                Console.WriteLine(e.Message);
+                return;
+            }
+            catch (FormatException e)
+            {
+                Console.WriteLine(e.Message);
+                return;
+            }
+            catch(IndexOutOfRangeException e)
+            {
+                Console.WriteLine(e.Message);
+                return;
+            }
+
+            Point point = new Point(values[0], values[1]);
+
+            picture.Add(point);
+            //point.Draw();
         }
     }
 }

@@ -17,6 +17,8 @@ namespace GraphicsEditor
             app.AddCommand(new LineCommand(app, picture));
             app.AddCommand(new CircleCommand(app, picture));
             app.AddCommand(new EllipseCommand(app, picture));
+            app.AddCommand(new RemoveCommand(app, picture));
+            app.AddCommand(new ListCommand(app, picture));
             app.AddCommand(new ExplainCommand(app));
             app.AddCommand(new HelpCommand(app));
             app.AddCommand(new ExitCommand(app));

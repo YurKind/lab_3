@@ -11,7 +11,7 @@ namespace GraphicsEditor
     {
         public void Draw(IDrawer drawer)
         {
-            throw new NotImplementedException();
+
         }
     }
 }

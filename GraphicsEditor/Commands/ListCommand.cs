@@ -1,14 +1,18 @@
-﻿using System;
-using ConsoleUI;
+﻿using ConsoleUI;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace GraphicsEditor.Commands
 {
-    internal class CircleCommand : ICommand
+    class ListCommand : ICommand
     {
         Application app;
         Picture picture;
 
-        public CircleCommand(Application app, Picture picture)
+        public ListCommand(Application app, Picture picture)
         {
             this.app = app;
             this.picture = picture;
@@ -18,7 +22,7 @@ namespace GraphicsEditor.Commands
         {
             get
             {
-                return "circle";
+                return "list";
             }
         }
 
@@ -26,8 +30,7 @@ namespace GraphicsEditor.Commands
         {
             get
             {
-                return "Чтобы нарисовать круг, введите: \n" +
-                    "circle x y r\nгде x - координата центра по оси Ox, y - координата центра по оси Oy, r - радиус";
+                return "Выводит список всех фигур на рисунке (с указанием индекса и всех параметров)";
             }
         }
 
@@ -35,7 +38,7 @@ namespace GraphicsEditor.Commands
         {
             get
             {
-                return "Рисование круга";
+                return "Вывод списка фигур";
             }
         }
 
@@ -43,13 +46,13 @@ namespace GraphicsEditor.Commands
         {
             get
             {
-                return new string[] { "krug",  "crcl"};
+                return new string[] { "ls", "lst" };
             }
         }
 
         public void Execute(params string[] parameters)
         {
-
+            
         }
     }
 }

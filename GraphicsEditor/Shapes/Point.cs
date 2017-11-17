@@ -1,6 +1,7 @@
 ﻿using DrawablesUI;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,10 +10,17 @@ namespace GraphicsEditor
 {
     class Point : IDrawable
     {
+        private PointF pointf = new PointF();
+
+        public Point(float x, float y)
+        {
+            pointf.X = x;
+            pointf.Y = y;
+        }
 
         public void Draw(IDrawer drawer)
         {
-            throw new NotImplementedException();
+            drawer.DrawPoint(pointf);
         }
     }
 }

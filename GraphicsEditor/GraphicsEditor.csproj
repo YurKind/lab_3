@@ -42,10 +42,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CommandService.cs" />
     <Compile Include="Commands\CircleCommand.cs" />
     <Compile Include="Commands\LineCommand.cs" />
+    <Compile Include="Commands\ListCommand.cs" />
     <Compile Include="Commands\PointCommand.cs" />
     <Compile Include="Commands\EllipseCommand.cs" />
+    <Compile Include="Commands\RemoveCommand.cs" />
     <Compile Include="Shapes\Circle.cs" />
     <Compile Include="Shapes\Ellipse.cs" />
     <Compile Include="Shapes\Line.cs" />
