@@ -43,13 +43,36 @@ namespace GraphicsEditor.Commands
         {
             get
             {
-                return new string[] { "krug",  "crcl"};
+                return new string[] { "krug", "crcl" };
             }
         }
 
         public void Execute(params string[] parameters)
         {
+            float[] values = new float[3];
+            try
+            {
+                values = CommandProcessor.GetCommandValues(parameters, 3);
+            }
+            catch (OverflowException e)
+            {
+                Console.WriteLine(e.Message);
+                return;
+            }
+            catch (FormatException e)
+            {
+                Console.WriteLine(e.Message);
+                return;
+            }
+            catch (IndexOutOfRangeException e)
+            {
+                Console.WriteLine(e.Message);
+                return;
+            }
 
+            Circle circle = new Circle(values[0], values[1], values[2]);
+
+            picture.Add(circle);
         }
     }
 }

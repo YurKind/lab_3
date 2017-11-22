@@ -55,7 +55,30 @@ namespace GraphicsEditor.Commands
 
         public void Execute(params string[] parameters)
         {
-            throw new NotImplementedException();
+            float[] values = new float[2];
+            try
+            {
+                values = CommandProcessor.GetCommandValues(parameters, 4);
+            }
+            catch (OverflowException e)
+            {
+                Console.WriteLine(e.Message);
+                return;
+            }
+            catch (FormatException e)
+            {
+                Console.WriteLine(e.Message);
+                return;
+            }
+            catch (IndexOutOfRangeException e)
+            {
+                Console.WriteLine(e.Message);
+                return;
+            }
+
+            Line line = new Line(values[0], values[1], values[2], values[3]);
+
+            picture.Add(line);
         }
     }
 }

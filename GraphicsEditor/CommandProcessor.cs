@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GraphicsEditor
 {
-    public static class CommandService
+    public static class CommandProcessor
     {
         public static float[] GetCommandValues(string[] parameters, int numberOfParameters)
         {

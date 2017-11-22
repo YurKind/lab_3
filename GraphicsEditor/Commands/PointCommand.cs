@@ -52,7 +52,7 @@ namespace GraphicsEditor.Commands
             float[] values = new float[2];
             try
             {
-                values = CommandService.GetCommandValues(parameters, 2);
+                values = CommandProcessor.GetCommandValues(parameters, 2);
             }
             catch (OverflowException e)
             {
@@ -73,7 +73,6 @@ namespace GraphicsEditor.Commands
             Point point = new Point(values[0], values[1]);
 
             picture.Add(point);
-            //point.Draw();
         }
     }
 }

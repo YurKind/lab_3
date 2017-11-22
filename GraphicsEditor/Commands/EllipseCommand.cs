@@ -50,7 +50,30 @@ namespace GraphicsEditor.Commands
 
         public void Execute(params string[] parameters)
         {
+            float[] values = new float[5];
+            try
+            {
+                values = CommandProcessor.GetCommandValues(parameters, 5);
+            }
+            catch (OverflowException e)
+            {
+                Console.WriteLine(e.Message);
+                return;
+            }
+            catch (FormatException e)
+            {
+                Console.WriteLine(e.Message);
+                return;
+            }
+            catch (IndexOutOfRangeException e)
+            {
+                Console.WriteLine(e.Message);
+                return;
+            }
 
+            Ellipse elipse = new Ellipse(values[0], values[1], values[2], values[3], values[4]);
+
+            picture.Add(elipse);
         }
     }
 }

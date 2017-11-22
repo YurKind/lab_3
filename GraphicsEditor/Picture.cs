@@ -6,7 +6,7 @@ namespace GraphicsEditor
 {
     public class Picture : IDrawable
     {
-        private readonly List<IDrawable> shapes = new List<IDrawable>();
+        public List<IDrawable> Shapes { get; } = new List<IDrawable>();
         private readonly object lockObject = new object();
 
         public event Action Changed;
@@ -15,7 +15,7 @@ namespace GraphicsEditor
         {
             lock (lockObject)
             {
-                shapes.Remove(shape);
+                Shapes.Remove(shape);
             }
         }
 
@@ -23,7 +23,7 @@ namespace GraphicsEditor
         {
             lock (lockObject)
             {
-                shapes.RemoveAt(index);
+                Shapes.RemoveAt(index);
                 if (Changed != null)
                     Changed();
             }
@@ -33,7 +33,7 @@ namespace GraphicsEditor
         {
             lock (lockObject)
             {
-                shapes.Add(shape);
+                Shapes.Add(shape);
                 if (Changed != null)
                     Changed();
             }
@@ -43,7 +43,7 @@ namespace GraphicsEditor
         {
             lock (lockObject)
             {
-                shapes.Insert(index, shape);
+                Shapes.Insert(index, shape);
                 if (Changed != null)
                     Changed();
             }
@@ -53,7 +53,7 @@ namespace GraphicsEditor
         {
             lock (lockObject)
             {
-                foreach (var shape in shapes)
+                foreach (var shape in Shapes)
                 {
                     shape.Draw(drawer);
                 }

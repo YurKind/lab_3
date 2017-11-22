@@ -22,5 +22,10 @@ namespace GraphicsEditor
         {
             drawer.DrawPoint(pointf);
         }
+
+        public override string ToString()
+        {
+            return $"Точка ({pointf.X}, {pointf.Y})";
+        }
     }
 }

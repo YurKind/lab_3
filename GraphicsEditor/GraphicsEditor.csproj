@@ -42,7 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CommandService.cs" />
+    <Compile Include="CommandProcessor.cs" />
     <Compile Include="Commands\CircleCommand.cs" />
     <Compile Include="Commands\LineCommand.cs" />
     <Compile Include="Commands\ListCommand.cs" />
