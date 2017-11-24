@@ -84,7 +84,7 @@ namespace GraphicsEditor.Commands
                 for (int i = 0; i < values.Length; i++)
                 {
                     possablyBadIndex = i;
-                    picture.Shapes.RemoveAt((int)(values[i]) - i);
+                    picture.RemoveAt((int)(values[i]) - i);
                 }
             }
             catch (ArgumentOutOfRangeException)
