@@ -52,7 +52,14 @@ namespace GraphicsEditor.Commands
 
         public void Execute(params string[] parameters)
         {
-            for(int i = 0; i < picture.Shapes.Count; i++)
+            if (picture.Shapes.Count < 1)
+            {
+                Console.WriteLine("Список фигур пуст");
+
+                return;
+            }
+
+            for (int i = 0; i < picture.Shapes.Count; i++)
             {
                 Console.WriteLine($"[{i}] {picture.Shapes[i]}");
             }

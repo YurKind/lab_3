@@ -11,6 +11,12 @@ namespace GraphicsEditor
     class Point : IDrawable
     {
         private PointF pointf = new PointF();
+        private const int numberOfParameters = 2;
+
+        public static int NumberOfParameters
+        {
+            get { return numberOfParameters; }
+        }
 
         public Point(float x, float y)
         {

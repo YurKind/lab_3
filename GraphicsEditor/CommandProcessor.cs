@@ -8,28 +8,23 @@ namespace GraphicsEditor
 {
     public static class CommandProcessor
     {
-        public static float[] GetCommandValues(string[] parameters, int numberOfParameters)
+        public static float[] GetCommandValues(string[] parameters)
         {
             int possablyBadIndex = 0;
-            float[] values = new float[numberOfParameters];
+            float[] values = new float[parameters.Length];
 
             try
             {
-                if (parameters.Length != numberOfParameters)
-                {
-                    throw new IndexOutOfRangeException();
-                }
-
                 for (int i = 0; i < values.Length; i++)
                 {
                     possablyBadIndex = i;
                     values[i] = float.Parse(parameters[i]);
-                }
 
-                if (values[0] < 0 || values[1] < 0)
-                {
-                    Console.WriteLine("Значения должны быть положительными");
-                    throw new FormatException();
+                    if (values[i] < 0)
+                    {
+                        Console.WriteLine("Значения должны быть положительными");
+                        throw new FormatException();
+                    }
                 }
             }
             catch (FormatException)
@@ -39,11 +34,6 @@ namespace GraphicsEditor
             catch (OverflowException)
             {
                 throw new OverflowException("Значение: " + parameters[possablyBadIndex] + " слишком велико");
-            }
-            catch (IndexOutOfRangeException)
-            {
-                throw new IndexOutOfRangeException("Введено неверное число параметров. Требуемое число параметров: "
-                    + numberOfParameters);
             }
             return values;
         }

@@ -12,6 +12,12 @@ namespace GraphicsEditor
     {
         PointF start = new PointF();
         PointF end = new PointF();
+        private const int numberOfParameters = 4;
+
+        public static int NumberOfParameters
+        {
+            get { return numberOfParameters; }
+        }
 
         public Line(float x1, float y1, float x2, float y2)
         {

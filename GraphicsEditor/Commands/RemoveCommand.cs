@@ -54,7 +54,44 @@ namespace GraphicsEditor.Commands
 
         public void Execute(params string[] parameters)
         {
+            if (parameters.Length == 0)
+            {
+                Console.WriteLine("Для того, чтобы удалить фигуры, необходимо указать их идексы");
+                return;
+            }
 
+            float[] values = new float[parameters.Length];
+            try
+            {
+                values = CommandProcessor.GetCommandValues(parameters);
+            }
+            catch (OverflowException e)
+            {
+                Console.WriteLine(e.Message);
+                return;
+            }
+            catch (FormatException e)
+            {
+                Console.WriteLine(e.Message);
+                return;
+            }
+
+            Array.Sort(values);
+
+            int possablyBadIndex = 0;
+            try
+            {
+                for (int i = 0; i < values.Length; i++)
+                {
+                    possablyBadIndex = i;
+                    picture.Shapes.RemoveAt((int)(values[i]) - i);
+                }
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+                Console.WriteLine("Фигуры с индексом " + values[possablyBadIndex] + " не существует");
+                return;
+            }
         }
     }
 }

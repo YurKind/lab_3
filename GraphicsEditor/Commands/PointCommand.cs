@@ -49,10 +49,16 @@ namespace GraphicsEditor.Commands
 
         public void Execute(params string[] parameters)
         {
-            float[] values = new float[2];
+            if (Point.NumberOfParameters != parameters.Length)
+            {
+                Console.WriteLine($"Введено неверное число параметров, требуемое количество: {Point.NumberOfParameters}");
+                return;
+            }
+
+            float[] values = new float[Point.NumberOfParameters];
             try
             {
-                values = CommandProcessor.GetCommandValues(parameters, 2);
+                values = CommandProcessor.GetCommandValues(parameters);
             }
             catch (OverflowException e)
             {
@@ -60,11 +66,6 @@ namespace GraphicsEditor.Commands
                 return;
             }
             catch (FormatException e)
-            {
-                Console.WriteLine(e.Message);
-                return;
-            }
-            catch(IndexOutOfRangeException e)
             {
                 Console.WriteLine(e.Message);
                 return;

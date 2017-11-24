@@ -13,6 +13,12 @@ namespace GraphicsEditor
         private PointF center = new PointF();
         private SizeF size = new SizeF();
         private float rotateAngle;
+        private const int numberOfParameters = 5;
+
+        public static int NumberOfParameters
+        {
+            get { return numberOfParameters; }
+        }
 
         public Ellipse(float x, float y, float width, float height, float rotateAngle)
         {

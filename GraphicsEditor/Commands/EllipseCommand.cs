@@ -50,10 +50,16 @@ namespace GraphicsEditor.Commands
 
         public void Execute(params string[] parameters)
         {
-            float[] values = new float[5];
+            if (Ellipse.NumberOfParameters != parameters.Length)
+            {
+                Console.WriteLine($"Введено неверное число параметров, требуемое количество: {Ellipse.NumberOfParameters}");
+                return;
+            }
+
+            float[] values = new float[Ellipse.NumberOfParameters];
             try
             {
-                values = CommandProcessor.GetCommandValues(parameters, 5);
+                values = CommandProcessor.GetCommandValues(parameters);
             }
             catch (OverflowException e)
             {
@@ -61,11 +67,6 @@ namespace GraphicsEditor.Commands
                 return;
             }
             catch (FormatException e)
-            {
-                Console.WriteLine(e.Message);
-                return;
-            }
-            catch (IndexOutOfRangeException e)
             {
                 Console.WriteLine(e.Message);
                 return;
