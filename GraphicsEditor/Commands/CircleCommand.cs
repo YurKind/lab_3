@@ -71,6 +71,12 @@ namespace GraphicsEditor.Commands
                 return;
             }
 
+            if (values[2] == 0)
+            {
+                Console.WriteLine("Радиус должен быть больше нуля");
+                return;
+            }
+
             Circle circle = new Circle(values[0], values[1], values[2]);
 
             picture.Add(circle);

@@ -72,6 +72,13 @@ namespace GraphicsEditor.Commands
                 return;
             }
 
+            if(values[2] == 0 || values[3] == 0)
+            {
+                Console.WriteLine("Длины осей должны быть больше нуля");
+
+                return;
+            }
+
             Ellipse elipse = new Ellipse(values[0], values[1], values[2], values[3], values[4]);
 
             picture.Add(elipse);
