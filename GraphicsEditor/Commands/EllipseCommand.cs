@@ -44,7 +44,7 @@ namespace GraphicsEditor.Commands
         {
             get
             {
-                return new string[] { "ll", "elps" };
+                return new string[] { "ll", "elps", "эллипс" };
             }
         }
 
@@ -72,7 +72,7 @@ namespace GraphicsEditor.Commands
                 return;
             }
 
-            if(values[2] == 0 || values[3] == 0)
+            if (values[2] == 0 || values[3] == 0)
             {
                 Console.WriteLine("Длины осей должны быть больше нуля");
 

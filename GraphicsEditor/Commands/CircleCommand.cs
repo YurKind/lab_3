@@ -43,7 +43,7 @@ namespace GraphicsEditor.Commands
         {
             get
             {
-                return new string[] { "krug", "crcl" };
+                return new string[] { "krug", "crcl", "круг" };
             }
         }
 

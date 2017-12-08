@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GraphicsEditor
 {
@@ -23,18 +19,15 @@ namespace GraphicsEditor
                     if (values[i] < 0)
                     {
                         Console.WriteLine("Значения должны быть положительными");
-                        throw new FormatException();
+                        throw new OverflowException("Значение: " + parameters[possablyBadIndex] + " слишком велико");
                     }
                 }
             }
             catch (FormatException)
             {
-                throw new FormatException("Значение: " + parameters[possablyBadIndex] + " введено некорректно");
+                throw new FormatException("Значение: " + parameters[possablyBadIndex] + " введено некорректно. Введите число.");
             }
-            catch (OverflowException)
-            {
-                throw new OverflowException("Значение: " + parameters[possablyBadIndex] + " слишком велико");
-            }
+
             return values;
         }
     }

@@ -1,9 +1,5 @@
 ﻿using ConsoleUI;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GraphicsEditor.Commands
 {
@@ -46,7 +42,7 @@ namespace GraphicsEditor.Commands
         {
             get
             {
-                return new string[] { "ls", "lst" };
+                return new string[] { "ls", "lst", "лист", "список" };
             }
         }
 

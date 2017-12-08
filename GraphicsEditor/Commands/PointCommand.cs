@@ -1,10 +1,5 @@
 ﻿using ConsoleUI;
-using DrawablesUI;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GraphicsEditor.Commands
 {
@@ -43,7 +38,7 @@ namespace GraphicsEditor.Commands
         {
             get
             {
-                return new string[] { "tochka", "pnt" };
+                return new string[] { "tochka", "pnt", "точка" };
             }
         }
 
