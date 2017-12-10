@@ -74,19 +74,17 @@ namespace GraphicsEditor.Commands
 
             Array.Sort(values);
 
-            int possablyBadIndex = 0;
-            try
+            for (int i = 0; i < values.Length; i++)
             {
-                for (int i = 0; i < values.Length; i++)
+                try
                 {
-                    possablyBadIndex = i;
                     picture.RemoveAt((int)(values[i]) - i);
                 }
-            }
-            catch (ArgumentOutOfRangeException)
-            {
-                Console.WriteLine("Фигуры с индексом " + values[possablyBadIndex] + " не существует");
-                return;
+                catch (ArgumentOutOfRangeException)
+                {
+                    Console.WriteLine("Фигуры с индексом " + values[i] + " не существует");
+                    return;
+                }
             }
         }
     }

@@ -48,16 +48,16 @@ namespace GraphicsEditor.Commands
 
         public void Execute(params string[] parameters)
         {
-            if (picture.Shapes.Count < 1)
+            if (picture.Length < 1)
             {
                 Console.WriteLine("Список фигур пуст");
 
                 return;
             }
 
-            for (int i = 0; i < picture.Shapes.Count; i++)
+            for (int i = 0; i < picture.Length; i++)
             {
-                Console.WriteLine($"[{i}] {picture.Shapes[i]}");
+                Console.WriteLine($"[{i}] {picture[i]}");
             }
         }
     }

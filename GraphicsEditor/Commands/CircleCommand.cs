@@ -49,13 +49,15 @@ namespace GraphicsEditor.Commands
 
         public void Execute(params string[] parameters)
         {
-            if (Circle.NumberOfParameters != parameters.Length)
+            int numberOfParameters = 3;
+
+            if (numberOfParameters != parameters.Length)
             {
-                Console.WriteLine($"Введено неверное число параметров, требуемое количество: {Circle.NumberOfParameters}");
+                Console.WriteLine($"Введено неверное число параметров, требуемое количество: {numberOfParameters}");
                 return;
             }
 
-            float[] values = new float[Circle.NumberOfParameters];
+            float[] values = new float[numberOfParameters];
             try
             {
                 values = CommandProcessor.GetCommandValues(parameters);

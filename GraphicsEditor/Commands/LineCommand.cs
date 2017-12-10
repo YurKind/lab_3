@@ -51,13 +51,15 @@ namespace GraphicsEditor.Commands
 
         public void Execute(params string[] parameters)
         {
-            if (Line.NumberOfParameters != parameters.Length)
+            int numberOfParameters = 4;
+
+            if (numberOfParameters != parameters.Length)
             {
-                Console.WriteLine($"Введено неверное число параметров, требуемое количество: {Line.NumberOfParameters}");
+                Console.WriteLine($"Введено неверное число параметров, требуемое количество: {numberOfParameters}");
                 return;
             }
 
-            float[] values = new float[Line.NumberOfParameters];
+            float[] values = new float[numberOfParameters];
             try
             {
                 values = CommandProcessor.GetCommandValues(parameters);
